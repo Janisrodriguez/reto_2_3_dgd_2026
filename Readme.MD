@@ -7,7 +7,7 @@ Dejar de usar Python como una "calculadora gigante" y empezar a usarlo como una 
 
 ## 🛠 Requisitos de Entrega
 * **Formato:** Un único archivo Jupyter Notebook (`.ipynb`).
-* **Nomenclatura:** `Reto_Modulo_Pandas_Nombre_Apellido.ipynb` y `Reto_Modulo_Visualización_Nombre_Apellido.ipynb`.
+* **Nomenclatura:** `Reto_Modulo_Pandas_Nombre_Apellido.ipynb` o `Reto_Modulo_Visualización_Nombre_Apellido.ipynb`.
 * **Fecha de Entrega:** 03-01-2026.
 * **Estructura:** El código debe estar intercalado con celdas de **Markdown** explicando tus hallazgos (Storytelling).
 
