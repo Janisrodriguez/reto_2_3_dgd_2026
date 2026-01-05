@@ -1,10 +1,9 @@
-@"
 services:
   reto:
-    image: python:3.12-slim
-    container_name: reto_2_3_dgd_2026
-    working_dir: /work
+    build: .
+    container_name: reto_dgd
+    ports:
+      - "8888:8888"
     volumes:
       - ./:/work
-    command: bash -lc "pip install --no-cache-dir -r requirements.txt && tail -f /dev/null"
-"@ | Set-Content -Encoding utf8 docker-compose.yml
+    working_dir: /work
