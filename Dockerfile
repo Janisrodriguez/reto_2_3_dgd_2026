@@ -1,7 +1,12 @@
-reto_2_3_dgd_2026/
-  docker-compose.yml
-  Dockerfile
-  requirements.txt
-  Reto_Modulo_Pandas_Janis_Rodriguez.ipynb
-  data/
-    train.csv
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir jupyterlab
+
+COPY . .
+
+EXPOSE 8888
+

@@ -1,7 +1,7 @@
 ﻿services:
-  notebook:
+  Reto2:
     build: .
-    container_name: reto_modulo1_notebook
+    container_name: reto2_jupyter
     working_dir: /app
     volumes:
       - ./:/app
@@ -9,12 +9,14 @@
       - "8888:8888"
     environment:
       - PYTHONUNBUFFERED=1
+      - JUPYTER_TOKEN=Reto2
     command: >
       jupyter lab
       --ip=0.0.0.0
       --port=8888
       --no-browser
       --allow-root
-      --NotebookApp.token=
+      --NotebookApp.token=${JUPYTER_TOKEN}
       --NotebookApp.password=
+
 
