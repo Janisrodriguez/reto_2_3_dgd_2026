@@ -1,7 +1,7 @@
 ﻿services:
-  reto2:
+  notebook:
     build: .
-    container_name: reto2_dgd_2026
+    container_name: reto_modulo1_notebook
     working_dir: /app
     volumes:
       - ./:/app
@@ -17,3 +17,4 @@
       --allow-root
       --NotebookApp.token=
       --NotebookApp.password=
+
