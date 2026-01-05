@@ -1,5 +1,6 @@
 ﻿services:
-  Reto2:
+  reto2:
+    image: reto2-image:latest
     build: .
     container_name: reto2_jupyter
     working_dir: /app
