@@ -1,23 +1,20 @@
 ﻿services:
   reto2:
-    image: reto2-image:latest
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: reto2_jupyter
-    working_dir: /app
-    volumes:
-      - ./:/app
     ports:
       - "8888:8888"
+    volumes:
+      - .:/app
+    working_dir: /app
     environment:
-      - PYTHONUNBUFFERED=1
       - JUPYTER_TOKEN=Reto2
-    command: >
-      jupyter lab
-      --ip=0.0.0.0
-      --port=8888
-      --no-browser
-      --allow-root
-      --NotebookApp.token=${JUPYTER_TOKEN}
-      --NotebookApp.password=
+    command: 
+      - sh
+      - -c
+      - jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --ServerApp.token=Reto2 --ServerApp.password=''
+
 
 
