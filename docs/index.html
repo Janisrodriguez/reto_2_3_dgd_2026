@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos de Ingeniería: Módulo 1 - Diplomado Data Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        code { font-family: 'Source Code Pro', monospace; color: #DA291C; background: #fee2e2; padding: 2px 4px; border-radius: 4px; font-size: 0.9em;}
+        
+        .bg-usta-blue { background-color: #003366; }
+        .text-usta-blue { color: #003366; }
+        .border-usta-blue { border-color: #003366; }
+        
+        .bg-usta-yellow { background-color: #FFCC00; }
+        .text-usta-yellow { color: #FFCC00; }
+        
+        .bg-usta-red { background-color: #DA291C; }
+        .text-usta-red { color: #DA291C; }
+
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .section-gradient { background: linear-gradient(180deg, #f3f4f6 0%, #ffffff 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-usta-blue text-white sticky top-0 z-50 shadow-lg border-b-4 border-usta-yellow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold tracking-wider">RETOS DE INGENIERÍA</h1>
+                <p class="text-xs text-usta-yellow font-mono uppercase">Módulo 1: Python Core & Visualización</p>
+            </div>
+            <img src="https://usantotomas.edu.co/hs-fs/hubfs/social-suggested-images/usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png?width=282&height=65&name=usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png" alt="Logo USTA" class="h-10 filter invert brightness-0">
+        </div>
+    </header>
+
+    <!-- Hero / Motivación -->
+    <section class="relative bg-white py-16 overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block bg-usta-red text-white px-4 py-1 rounded-full font-bold text-sm mb-6 shadow-md animate-pulse">EVALUACIÓN PRÁCTICA</span>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="https://github.com/Izainea/reto_2_3_dgd_2026" target="_blank" class="flex items-center justify-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-gray-800 transition transform hover:-translate-y-1">
+                        <i class="fab fa-github text-2xl"></i>
+                        Descargar Recursos del Reto
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z" fill="#003366"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Instrucciones de Entrega -->
+    <section class="bg-usta-blue py-10 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
+                <div class="p-4">
+                    <i class="fas fa-file-code text-4xl text-usta-yellow mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Formato</h3>
+                    <p class="text-sm text-gray-300">Un único archivo <strong>.ipynb</strong> (Jupyter Notebook) con celdas de Markdown explicando tus hallazgos.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-database text-4xl text-usta-yellow mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Dataset</h3>
+                    <p class="text-sm text-gray-300">Usa <code>nyc-train-trip</code> o <code>train.csv</code> disponible en el repositorio. ¡Son datos reales!</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-star text-4xl text-usta-yellow mb-4"></i>
+                    <h3 class="font-bold text-xl mb-2">Evaluación</h3>
+                    <p class="text-sm text-gray-300">Se evalúa: Reducción de Memoria (>50%), Limpieza de Código y Storytelling Visual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RETO 1: PANDAS PRO -->
+    <section class="py-16 section-gradient">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center mb-12">
+                <div class="bg-usta-blue text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl font-bold mr-6 shadow-lg">1</div>
+                <div>
+                    <h3 class="text-4xl font-bold text-usta-blue">Reto Pandas Pro</h3>
+                    <p class="text-gray-600 font-medium">Optimización de Memoria y Procesamiento Vectorizado</p>
+                </div>
+            </div>
+
+            <div class="grid gap-8">
+                
+                <!-- Fase 1 -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-usta-yellow">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-microchip mr-3 text-usta-yellow"></i> Fase 1: Diagnóstico y Memoria
+                        </h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">1.</span> <div><strong>Inspección Profunda:</strong> <code>df.info()</code> miente. Usa <code>memory_usage='deep'</code> para ver el peso real de los strings. Compara el antes y el después.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">2.</span> <div><strong>Downcasting Numérico:</strong> ¿Necesitas 64 bits para contar hasta 6 pasajeros? Convierte <code>passenger_count</code> a <code>int8</code> usando <code>pd.to_numeric(..., downcast='integer')</code>.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">3.</span> <div><strong>Categoricals:</strong> Convierte columnas repetitivas como <code>store_and_fwd_flag</code> a tipo <code>category</code>. Verifica la reducción masiva de RAM.</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-usta-blue">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-bolt mr-3 text-usta-blue"></i> Fase 2: Vectorización y Tiempo
+                        </h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">4.</span> <div><strong>Parsing Explícito:</strong> Acelera <code>to_datetime</code> especificando el <code>format</code>.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">5.</span> <div><strong>Accessors (.dt):</strong> Extrae hora y día usando <code>.dt.hour</code>. ¡Cero bucles for!</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">6.</span> <div><strong>Lógica NumPy:</strong> Reemplaza <code>apply</code> + <code>if/else</code> por el ultra-rápido <code>np.where</code> para crear la columna <code>trip_type</code>.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">7.</span> <div><strong>Geoespacial Vectorizado:</strong> Implementa la fórmula Haversine usando funciones trigonométricas de NumPy sobre las columnas de lat/lon completas.</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-usta-red">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-code mr-3 text-usta-red"></i> Fase 3: Código Elegante (Method Chaining)
+                        </h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">8.</span> <div><strong>.query():</strong> Filtra datos usando strings limpios tipo SQL.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">9.</span> <div><strong>.assign():</strong> Crea la columna <code>velocidad_kph</code> al vuelo dentro de una cadena.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">10.</span> <div><strong>.clip():</strong> Maneja outliers en duración limitando los valores extremos sin borrar filas.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">11.</span> <div><strong>.pipe():</strong> Inyecta una función personalizada de etiquetado de tráfico en tu cadena.</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fase 4 -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-gray-400">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-layer-group mr-3 text-gray-600"></i> Fase 4: Agregaciones Avanzadas
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">12.</span> <div><strong>Named Aggregation:</strong> Groupby con nombres de columnas personalizados.</div></li>
+                                <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">13.</span> <div><strong>.transform():</strong> Window functions en Pandas. Agrega el promedio del grupo a cada fila original.</div></li>
+                            </ul>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">14.</span> <div><strong>Filter Groups:</strong> Elimina horas del día con poca actividad estadística.</div></li>
+                                <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">15.</span> <div><strong>Binning (qcut):</strong> Crea categorías de distancia ("Corto", "Largo") basadas en cuantiles.</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 5 -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-gray-800">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-chart-line mr-3 text-gray-800"></i> Fase 5: Time Series & Export
+                        </h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">16.</span> <div><strong>Resample:</strong> Agrupa temporalmente por Día ('D').</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">17.</span> <div><strong>Rolling Windows:</strong> Suaviza la serie temporal con una media móvil de 7 días.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">18.</span> <div><strong>Scatter Alpha:</strong> Usa transparencia para revelar densidad en gráficos masivos.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">19.</span> <div><strong>Correlaciones:</strong> Heatmap de Seaborn para variables numéricas.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-usta-blue mr-2">20.</span> <div><strong>Parquet:</strong> Guarda el resultado final en formato eficiente <code>.parquet</code>.</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="h-4 bg-gradient-to-r from-usta-blue via-usta-red to-usta-yellow"></div>
+
+    <!-- RETO 2: VISUALIZACIÓN PRO -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center mb-12">
+                <div class="bg-usta-red text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl font-bold mr-6 shadow-lg">2</div>
+                <div>
+                    <h3 class="text-4xl font-bold text-usta-blue">Reto Visualización Pro</h3>
+                    <p class="text-gray-600 font-medium">Storytelling y Automatización de Reportes</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Columna Izquierda -->
+                <div class="space-y-8">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h4 class="font-bold text-usta-red mb-3">Fase 1: Fundamentos Pro</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li><strong>1. Escala Logarítmica:</strong> Revela datos ocultos en distribuciones sesgadas (salarios, precios).</li>
+                            <li><strong>2. Orden Visual:</strong> Jamás ordenes por orden alfabético. Ordena por magnitud.</li>
+                            <li><strong>3. Matplotlib OO API:</strong> Usa <code>fig, ax = plt.subplots()</code> para control total.</li>
+                            <li><strong>4. Títulos Activos:</strong> El título debe ser la conclusión ("Las ventas cayeron"), no la descripción.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h4 class="font-bold text-usta-red mb-3">Fase 2: Big Data Viz</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li><strong>5. Overplotting:</strong> Arregla scatterplots sólidos usando <code>alpha=0.05</code> y puntos pequeños.</li>
+                            <li><strong>6. Hexbins:</strong> Usa <code>sns.jointplot(kind="hex")</code> para ver densidad en lugar de puntos.</li>
+                            <li><strong>7. Geoespacial Rápido:</strong> Dibuja el mapa de NYC usando solo Lat/Lon como ejes X/Y.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h4 class="font-bold text-usta-red mb-3">Fase 3: Relaciones Complejas</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li><strong>8. Heatmaps Temporales:</strong> Pivota tablas para ver patrones Día vs Hora.</li>
+                            <li><strong>9. Small Multiples:</strong> Usa <code>FacetGrid</code> para comparar histogramas por categoría.</li>
+                            <li><strong>10. Boxplots:</strong> Compara distribuciones y outliers, no solo promedios.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha -->
+                <div class="space-y-8">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h4 class="font-bold text-usta-red mb-3">Fase 4: Estética de Reporte</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li><strong>11. No Chartjunk:</strong> Usa <code>sns.despine()</code>. Menos es más.</li>
+                            <li><strong>12. Color Semántico:</strong> Rojo para "malo", Verde para "bueno". No uses colores aleatorios.</li>
+                            <li><strong>13. Anotaciones:</strong> Señala el insight directamente en el gráfico con flechas.</li>
+                            <li><strong>14. Alta Resolución:</strong> Guarda con <code>dpi=300</code> para que se vea nítido en PDF.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-lg p-6 border-2 border-usta-blue relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-usta-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg">CAPSTONE FINAL</div>
+                        <h4 class="font-bold text-usta-blue mb-3">Fase 5: Automatización PDF</h4>
+                        <p class="text-sm text-gray-600 mb-4">El objetivo final: Un script que genere el reporte sin que tú muevas un dedo.</p>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li><strong>15. Setup FPDF:</strong> Inicializa el documento PDF.</li>
+                            <li><strong>16. Generar Assets:</strong> Función que crea y guarda gráficos temporalmente.</li>
+                            <li><strong>17. Tablas a Texto:</strong> Convierte Dataframes resumen a strings.</li>
+                            <li><strong>18. Integración:</strong> Usa <code>pdf.image()</code> para insertar los gráficos.</li>
+                            <li><strong>19. Narrativa Dinámica:</strong> Usa f-strings para insertar métricas calculadas en el texto del reporte.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-usta-blue text-white py-8 text-center border-t-4 border-usta-yellow">
+        <p class="font-bold">Diplomado en Estrategias de Datos</p>
+        <p class="text-sm text-gray-300 mt-2">Universidad Santo Tomás - 2026</p>
+    </footer>
+
+</body>
+</html>
