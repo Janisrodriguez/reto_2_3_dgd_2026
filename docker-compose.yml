@@ -8,6 +8,7 @@
       - "8888:8888"
     volumes:
       - .:/app
+      --ServerApp.root_dir=/app
     working_dir: /app
     environment:
       - JUPYTER_TOKEN=Reto2
